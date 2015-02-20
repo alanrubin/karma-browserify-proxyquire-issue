@@ -27,7 +27,7 @@ module.exports = function(karma) {
       debug: true,
       transform:[ ],
       plugin:[
-        "proxyquire-universal"
+       // "proxyquire-universal"
       ]
     }
   });

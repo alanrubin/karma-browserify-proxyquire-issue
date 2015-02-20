@@ -1,3 +1,4 @@
+/*
 describe('sum - proxyquire',function(){
   var sinon = require('sinon');
   var chai = require('chai');
@@ -26,10 +27,10 @@ describe('sum - proxyquire',function(){
     expect(sum(2,2,3)).to.equal(7);
   });
 });
+ */
 
 
 
-/*
 describe('sum no proxyquire', function () {
   var sinon = require('sinon');
   var chai = require('chai');
@@ -53,4 +54,4 @@ describe('sum no proxyquire', function () {
 
     expect(sum(2,2,3)).to.equal(7);
   });
-});             */
+});
