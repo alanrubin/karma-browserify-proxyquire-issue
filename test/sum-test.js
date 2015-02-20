@@ -7,7 +7,7 @@ describe('sum - proxyquire',function(){
 
   var add = sinon.stub();
 
-  var proxyquire = require('proxyquire');
+  var proxyquire = require('proxyquireify')(require);
 
   var sum = proxyquire('../src/sum',{
     '/add':add
