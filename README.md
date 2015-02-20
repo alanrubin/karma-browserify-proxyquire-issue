@@ -1,7 +1,7 @@
 Demonstrates problem with `karma-browserify` and `proxyquire-universal`.
 
 ```
-git git@github.com:jamestalmage/karma-browserify-proxyquire-issue.git
+git clone git@github.com:jamestalmage/karma-browserify-proxyquire-issue.git
 cd karma-browserify-proxyquire-issue
 npm install
 karma start
