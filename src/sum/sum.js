@@ -1,6 +1,6 @@
 module.exports = sum;
 
-var add = require('./add');
+var add = require('../add/add');
 
 function sum(items){
   var sum = 0;
@@ -9,8 +9,3 @@ function sum(items){
   }
   return sum;
 }
-
-// obviously a terrible idea
-sum.setAddMock = function (mock){
-  add = mock;
-};

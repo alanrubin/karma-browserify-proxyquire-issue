@@ -1,8 +1,14 @@
+var cover = require('browserify-istanbul');
+
+var coverOptions = {
+  ignore: ['**/*test.js']
+  //defaultIgnore: true
+};
 
 module.exports = function(karma) {
 
   karma.set({
-    frameworks: ['browserify', 'mocha'],
+    frameworks: ['browserify', 'mocha', 'chai-sinon'],
 
     files: [
       'test/*.js'
@@ -14,21 +20,30 @@ module.exports = function(karma) {
 
     browsers:['Chrome'],
 
-    autoWatch: true,
-    //singleRun: false,
+    //autoWatch: true,
+    singleRun: true,
 
     logLevel:karma.LOG_DEBUG,
 
     reporters:[
-      'growl', 'spec'
+      'growl', 'spec', 'coverage'
     ],
+
+    coverageReporter: {
+      type : 'html',
+      dir: 'coverage/'
+    },
 
     browserify: {
       debug: true,
-      transform:[ ],
-      plugin:[
-        "proxyquire-universal"
-      ]
+      extensions : ['.js'],
+      configure: function (bundle) {
+        bundle.on('prebundle', function () {
+          bundle
+            .plugin('proxyquire-universal')
+            .transform(cover(coverOptions))
+        });
+      }
     }
   });
 };

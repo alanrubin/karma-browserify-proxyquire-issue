@@ -10,7 +10,7 @@ describe('sum - proxyquire',function(){
   var proxyquire = require('proxyquire');
 
   var sum = proxyquire('../src/sum',{
-    '/add':add
+    '../add/add':add
   });
 
   beforeEach(function(){
