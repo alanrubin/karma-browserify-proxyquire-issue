@@ -20,8 +20,8 @@ module.exports = function(karma) {
 
     browsers:['Chrome'],
 
-    //autoWatch: true,
-    singleRun: true,
+    autoWatch: true,
+    singleRun: false,
 
     logLevel:karma.LOG_DEBUG,
 
