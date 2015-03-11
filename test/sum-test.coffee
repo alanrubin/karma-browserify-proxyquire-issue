@@ -8,11 +8,13 @@ describe 'sum - proxyquire', ->
   add = sinon.stub()
 
   proxyquire = require('proxyquire')
-
-  sum = require('../src/sum/sum')
-  # sum = proxyquire('../src/sum/sum', {
-  #   '../add/add':add
-  # })
+  
+  # Working
+  # sum = require('../src/sum/sum')
+  # Not Working
+  sum = proxyquire('../src/sum/sum', {
+    '../add/add':add
+  })
 
   beforeEach ->
     add.reset()
