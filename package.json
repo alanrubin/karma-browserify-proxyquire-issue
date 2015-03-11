@@ -24,10 +24,11 @@
     "proxyquire-universal": "^1.0.3",
     "proxyquireify": "git://github.com/thlorenz/proxyquireify#5762d478a22bb76807e3b92a3b881c42686b3b69",
     "sinon": "^1.12.2",
-    "sinon-chai": "^2.7.0"
+    "sinon-chai": "^2.7.0",
+    "coffee-reactify": "~2.4.1"
   },
   "browser": {
-    "./src/add/add.js" : "./browser/add.js"
+    "./src/add/add.js": "./browser/add.js"
   },
   "scripts": {
     "test": "mocha"

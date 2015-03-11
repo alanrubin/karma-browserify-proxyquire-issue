@@ -1,1 +1,1 @@
-module.exports = require('./sum');
+module.exports = require('./sum.coffee');

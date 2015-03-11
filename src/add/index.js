@@ -1,1 +1,1 @@
-module.exports = require('./add');
+module.exports = require('./add.coffee');

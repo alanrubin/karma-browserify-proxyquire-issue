@@ -11,11 +11,12 @@ module.exports = function(karma) {
     frameworks: ['browserify', 'mocha', 'chai-sinon'],
 
     files: [
-      'test/*.js'
+      'test/*.js', 'test/*.coffee'
     ],
 
     preprocessors: {
-      'test/*.js': [ 'browserify' ]
+      'test/*.js': [ 'browserify' ],
+      'test/*.coffee': [ 'browserify' ]
     },
 
     browsers:['Chrome'],
@@ -36,14 +37,9 @@ module.exports = function(karma) {
 
     browserify: {
       debug: true,
-      extensions : ['.js'],
-      configure: function (bundle) {
-        bundle.on('prebundle', function () {
-          bundle
-            .plugin('proxyquire-universal')
-            .transform(cover(coverOptions))
-        });
-      }
+      plugin: ['proxyquire-universal'],
+      transform: ['coffee-reactify'],
+      extensions : ['.js', '.coffee']
     }
   });
 };
