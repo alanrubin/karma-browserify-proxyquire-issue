@@ -1,5 +1,5 @@
 describe('add',function(){
-  var add = require('../src/add');
+  var add = require('../src/add/add');
   var chai = require('chai');
   var expect = chai.expect;
 
