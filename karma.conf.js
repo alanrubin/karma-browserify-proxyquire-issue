@@ -37,9 +37,10 @@ module.exports = function(karma) {
 
     browserify: {
       debug: true,
-      plugin: ['proxyquire-universal'],
-      transform: ['coffee-reactify'],
-      extensions : ['.js', '.coffee']
+      extensions : ['.js', '.coffee'],
+      configure: function(bundle) {
+        bundle.transform('coffee-reactify').plugin('proxyquire-universal');
+      }
     }
   });
 };
